@@ -1,6 +1,6 @@
 #include "nn_aux.h"
 
-long SortedNeighborTable::finish_search(vector<neighbor>& v)
+size_t SortedNeighborTable::finish_search(vector<neighbor>& v)
 {
 	v.reserve(pq.size());
 

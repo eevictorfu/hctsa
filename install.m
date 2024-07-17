@@ -97,6 +97,8 @@ else
 end
 fprintf(1,'\n');
 if ~silentInstall
+
+    
     input('<<Press any key to continue>>')
 end
 

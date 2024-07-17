@@ -69,7 +69,7 @@ class onebased_vector {
 
 class mvector : public onebased_vector<double> {
 	protected:
-		const long Length;
+		size_t Length;
 		
 		mvector(const mvector& a); 	 // give dummy copy constructor to prevent copying 
 		mvector(double* V, const long length) :
@@ -96,8 +96,8 @@ class mvector : public onebased_vector<double> {
 // Simple N by M double matrix with one based indexing for rows and for columns
 class mmatrix : protected onebased_vector<double> {
 	protected:
-		const long M;
-		const long N;
+		size_t M;
+		size_t N;
 		
 		mmatrix(const mmatrix& a);		// give dummy copy constructor to prevent copying 
 		

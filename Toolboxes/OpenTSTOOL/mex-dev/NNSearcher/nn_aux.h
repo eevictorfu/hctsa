@@ -43,7 +43,7 @@ class neighbor	// a "neighbor" is described by its index (into the set of points
 		inline bool operator< (const neighbor& x) const { return d < x.d; }            		
 };
 
-class neighborCompare : public binary_function<neighbor, neighbor, bool> {  
+class neighborCompare {  
 	public:
   		inline bool operator()(const neighbor& x, const neighbor& y) const { return x.dist() < y.dist(); } 
 };
@@ -64,7 +64,7 @@ class SortedNeighborTable
 		void insert(const neighbor& x);
 		
 		inline void init_search(const long nnr) { NNR = nnr; hd = INFINITY; }
-		long finish_search(vector<neighbor>& v);
+		size_t finish_search(vector<neighbor>& v);
 };
 
 class cluster
@@ -140,7 +140,7 @@ class searchitem
 		inline double d_max() const { return dmax; }; 		// accumulated value of d_max for this cluster
 };
 
-class searchitemCompare : public binary_function<searchitem, searchitem, bool> {  
+class searchitemCompare {  
 	public:		
 		inline bool operator()(const searchitem& x, const searchitem& y) const {				
 			if (x.d_min() == y.d_min()) 		

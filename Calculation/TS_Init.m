@@ -16,7 +16,7 @@ function TS_Init(INP_ts,whatFeatureSet,beVocal,outputFile)
 % beVocal: Whether to display details of the progress of the script to screen.
 %           a 3-vector, specifying for 1. time series, 2. master operations,
 %           and 3. operations.
-% outputFile: Specify an output filename
+% outputFile: Specify an output filenameWarning: HCTSA.mat already exists -- if you continue, this file will be overwritten.
 %
 %---OUTPUTS:
 % Writes output to HCTSA.mat (or specified custom filename: outputFile)
@@ -69,13 +69,13 @@ end
 % ------------------------------------------------------------------------------
 % First check if you're about to overwrite an existing file
 % ------------------------------------------------------------------------------
-if exist(['./',outputFile],'file')
-    reply = input(sprintf(['Warning: %s already exists -- if you continue, this ' ...
-        'file will be overwritten.\n[press ''y'' to continue] '],outputFile),'s');
-    if ~strcmp(reply,'y')
-        return
-    end
-end
+% if exist(['./',outputFile],'file')
+%     reply = input(sprintf(['Warning: %s already exists -- if you continue, this ' ...
+%         'file will be overwritten.\n[press ''y'' to continue] '],outputFile),'s');
+%     if ~strcmp(reply,'y')
+%         return
+%     end
+% end
 
 %-------------------------------------------------------------------------------
 % Convert a feature-set name to a set of input files

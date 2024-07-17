@@ -354,7 +354,7 @@ void mexFunction(int nlhs, mxArray  *plhs[], int nrhs, const mxArray  *prhs[])
 		char* metric = 0;
 
 		if (mxIsChar(mxGetField(prhs[-1], 0, "optional"))) {
-    		long buflen = (mxGetM(mxGetField(prhs[-1], 0, "optional")) * mxGetN(mxGetField(prhs[-1], 0, "optional"))) + 1;
+    		size_t buflen = (mxGetM(mxGetField(prhs[-1], 0, "optional")) * mxGetN(mxGetField(prhs[-1], 0, "optional"))) + 1;
  			metric = (char*) mxMalloc(buflen);
         	mxGetString(mxGetField(prhs[-1], 0, "optional"), metric, buflen);
 		}
